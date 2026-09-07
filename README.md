@@ -11,7 +11,7 @@ Simple Library Information System
 
 ## Installation
 1. Clone repository:
-   git clone <URL_REPOSITORY_GITHUB_ANDA>
+   git clone <https://github.com/annissazh/library-system>
 2. Masuk ke folder proyek:
    cd library-system
 3. Install dependency:
