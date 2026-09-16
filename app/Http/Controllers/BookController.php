@@ -14,14 +14,13 @@ class BookController extends Controller
             ['id' => 3, 'title' => 'Basis Data Lanjut', 'author' => 'Siti Aminah', 'year' => 2019],
             ['id' => 4, 'title' => 'Algoritma dan Pemrograman', 'author' => 'Rian Hidayat', 'year' => 2021],
             ['id' => 5, 'title' => 'Pemrograman Berorientasi Objek', 'author' => 'Deni Prasetyo', 'year' => 2023],
-            ['id' => 6, 'title' => 'Belajar Cloud Computing', 'author' => 'Andi Wijaya', 'year' => 2024],
-            ['id' => 7, 'title' => 'Keamanan Jaringan', 'author' => 'Dewi Lestari', 'year' => 2021],
-            ['id' => 8, 'title' => 'Desain UI/UX Modern', 'author' => 'Citra Kirana', 'year' => 2025],
         ];
 
-        $stock = 7; // Simulasi stok
+        // 1. Buat variabel $stock di sini
+        $stock = 7;
 
-        return view('books.index', compact('books', 'stock'));
+        // 2. Tambahkan 'stock' di dalam fungsi compact()
+        return view('books.index', compact('books', 'stock')); 
     }
 
     public function show($id)
