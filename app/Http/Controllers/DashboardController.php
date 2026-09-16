@@ -14,6 +14,6 @@ class DashboardController extends Controller
         $totalBooks = 8;
         $totalCategories = 5;
         $totalMembers = 5;
-        return view('dashboard.index', compact ('title', 'description', 'jumlahBuku', 'jumlahMember'));
+        return view('dashboard.index', compact('title', 'description', 'totalBooks', 'totalCategories', 'totalMembers'));
     }
 }
