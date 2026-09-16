@@ -18,3 +18,6 @@ class DashboardController extends Controller
 
         // 2. Masukkan 'stock' ke dalam compact()
         return view('dashboard.index', compact('title','description','totalBooks','totalCategories','totalMembers','stock'));
+    }
+
+}
