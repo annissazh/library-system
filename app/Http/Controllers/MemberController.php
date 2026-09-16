@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 class MemberController extends Controller
 {
     public function index() {
-    return view('members.index');
+    $members = [
+            'Andi',
+            'Budi',
+            'Citra',
+            'Dewi',
+            'Eko'
+        ];
+    return view('members.index', compact('members'));
     }
 }
