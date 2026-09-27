@@ -5,12 +5,6 @@
 @section('content')
     <h2>Daftar Buku</h2>
 
-    @if($stock ?? 0)
-        <p><em>Status: Buku tersedia (Stok: {{ $stock }})</em></p>
-    @else
-        <p><em>Status: Buku sedang habis.</em></p>
-    @endif
-
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
             <tr>
