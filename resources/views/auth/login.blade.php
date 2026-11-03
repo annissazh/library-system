@@ -8,7 +8,13 @@
 <body>
     <h1>Login Sistem Perpustakaan</h1>
 
-        @if ($errors->any())
+    @if (session('success'))
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 15px; border: 1px solid #c3e6cb; border-radius: 4px;">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
             <div>
                 @foreach ($errors->all() as $error)
                     <p>{{ $error }}</p>
