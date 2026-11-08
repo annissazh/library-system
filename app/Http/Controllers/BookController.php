@@ -96,8 +96,12 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+        Gate::authorize('delete', $book);
+
         $book->delete();
 
-        return redirect()->route('books.index');
+        return redirect()
+        ->route('books.index')
+        ->with('success', 'Buku berhasil dihapus.');
     }
 }
