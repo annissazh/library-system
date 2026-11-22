@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Book;
+use App\Models\Borrowing;
+use App\Models\Category;
+use App\Models\Member;
 
 class DashboardController extends Controller
 {
-    //
     public function index()
     {
-        $title = "Library System Dashboard";
-        $description = "Selamat datang di Sistem Informasi Perpustakaan Sederhana.";
-        $totalBooks = 8;
-        $totalCategories = 5;
-        $totalMembers = 5;
-        $stock = 7;
+        $totalBooks       = Book::count();
+        $totalMembers     = Member::count();
+        $totalCategories  = Category::count();
+        $totalBorrowings  = Borrowing::count();
+        $activeBorrowings = Borrowing::where('status', 'borrowed')->count();
 
-        // 2. Masukkan 'stock' ke dalam compact()
-        return view('dashboard.index', compact('title','description','totalBooks','totalCategories','totalMembers','stock'));
+        return view('dashboard.index', compact(
+            'totalBooks',
+            'totalMembers',
+            'totalCategories',
+            'totalBorrowings',
+            'activeBorrowings'
+        ));
     }
-
 }
